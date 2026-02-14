@@ -20,31 +20,26 @@ Dataset is originally splited into three parts.
 - **No_DR:** 118 samples  
 
 ---
-## Data Augmentation
 
-To improve generalization and reduce overfitting, the following augmentation strategy was applied during training.  
-For validation and testing, only deterministic preprocessing was used.
+###Data Augmentation
 
----
-
-**Data Augmentation**
 To improve generalization and reduce overfitting, several data augmentation techniques were applied during training.
 All training images were resized to 256×256 and randomly cropped to 224×224. Random horizontal flipping was used to increase invariance to left–right orientation. A RandomAffine transformation was applied with rotation up to ±15°, translation up to 5%, and scaling between 0.9 and 1.1. ColorJitter was also used to simulate real-world illumination variations by adjusting brightness, contrast, saturation, and hue. Finally, RandomErasing (p = 0.25) was applied to improve robustness against occlusion and missing retinal features.
 For validation and testing, only deterministic preprocessing was used: resizing to 256×256 followed by center cropping to 224×224, tensor conversion, and normalization.
 
 ---
 
-**Model**
+###Model
 
 In this project, three lightweight attention mechanisms were integrated into the ResNet-18 backbone to enhance feature representation while keeping the model computationally efficient. The attention modules used are Squeeze-and-Excitation (SE), Convolutional Block Attention Module (CBAM), and Efficient Channel Attention (ECA). These modules help the network focus on the most informative retinal features by refining channel-wise and/or spatial feature responses. All attention-based models were evaluated and compared against the baseline ResNet-18 using the same training and testing protocol.
 
--**ResNet-18:**  https://arxiv.org/pdf/1512.03385
--**SE:**         https://arxiv.org/abs/1709.01507
--**CBAM:**       https://openaccess.thecvf.com/content_ECCV_2018/papers/Sanghyun_Woo_Convolutional_Block_Attention_ECCV_2018_paper.pdf
--**ECA:**        https://arxiv.org/abs/1910.03151
+- **ResNet-18:**  https://arxiv.org/pdf/1512.03385
+- **SE:**         https://arxiv.org/abs/1709.01507
+- **CBAM:**       https://openaccess.thecvf.com/content_ECCV_2018/papers/Sanghyun_Woo_Convolutional_Block_Attention_ECCV_2018_paper.pdf
+- **ECA:**        https://arxiv.org/abs/1910.03151
 
 ---
-**Training Setup**
+###Training Setup
 
 All models were trained using a custom PyTorch training loop with validation after every epoch. The best model checkpoint is saved automatically based on the highest validation accuracy.
 
@@ -66,7 +61,7 @@ All models were trained using a custom PyTorch training loop with validation aft
 
 ---
 
-## Discussion
+### Discussion
 
 - The **baseline ResNet-18** already achieved strong performance (**96.54% accuracy**, **AUC = 0.99**), indicating the model learns discriminative DR features effectively.
 - Adding attention modules consistently improved performance by reducing misclassification errors.
@@ -75,7 +70,7 @@ All models were trained using a custom PyTorch training loop with validation aft
 
 ---
 
-## Best Model
+### Best Model
 
 **ResNet-18 + ECA** is selected as the best-performing model due to:
 - Highest accuracy (**97.84%**)  
