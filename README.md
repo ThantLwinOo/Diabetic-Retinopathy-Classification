@@ -1,8 +1,7 @@
 # Diabetic-Retinopathy-Classification
 Analyzing the Effect of Lightweight Attention Modules on Fundus Images
 
-This project evaluates **ResNet-18** and its attention-enhanced variants for **binary diabetic retinopathy classification (DR vs No_DR)** using the *Diagnosis of Diabetic Retinopathy* dataset from Kaggle:  
-🔗 https://www.kaggle.com/datasets/pkdarabi/diagnosis-of-diabetic-retinopathy
+This project evaluates **ResNet-18** and its attention-enhanced variants for **binary diabetic retinopathy classification (DR vs No_DR)** using the *Diagnosis of Diabetic Retinopathy* dataset from Kaggle:  https://www.kaggle.com/datasets/pkdarabi/diagnosis-of-diabetic-retinopathy
 
 Dataset is originally splited into three parts.
 
