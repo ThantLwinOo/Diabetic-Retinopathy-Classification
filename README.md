@@ -21,7 +21,7 @@ Dataset is originally splited into three parts.
 
 ---
 
-###Data Augmentation
+### Data Augmentation
 
 To improve generalization and reduce overfitting, several data augmentation techniques were applied during training.
 All training images were resized to 256×256 and randomly cropped to 224×224. Random horizontal flipping was used to increase invariance to left–right orientation. A RandomAffine transformation was applied with rotation up to ±15°, translation up to 5%, and scaling between 0.9 and 1.1. ColorJitter was also used to simulate real-world illumination variations by adjusting brightness, contrast, saturation, and hue. Finally, RandomErasing (p = 0.25) was applied to improve robustness against occlusion and missing retinal features.
@@ -29,7 +29,7 @@ For validation and testing, only deterministic preprocessing was used: resizing 
 
 ---
 
-###Model
+### Model
 
 In this project, three lightweight attention mechanisms were integrated into the ResNet-18 backbone to enhance feature representation while keeping the model computationally efficient. The attention modules used are Squeeze-and-Excitation (SE), Convolutional Block Attention Module (CBAM), and Efficient Channel Attention (ECA). These modules help the network focus on the most informative retinal features by refining channel-wise and/or spatial feature responses. All attention-based models were evaluated and compared against the baseline ResNet-18 using the same training and testing protocol.
 
@@ -39,7 +39,7 @@ In this project, three lightweight attention mechanisms were integrated into the
 - **ECA:**        https://arxiv.org/abs/1910.03151
 
 ---
-###Training Setup
+### Training Setup
 
 All models were trained using a custom PyTorch training loop with validation after every epoch. The best model checkpoint is saved automatically based on the highest validation accuracy.
 
