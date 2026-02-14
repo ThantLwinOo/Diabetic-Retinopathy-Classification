@@ -43,10 +43,10 @@ In this project, three lightweight attention mechanisms were integrated into the
 
 All models were trained using a custom PyTorch training loop with validation after every epoch. The best model checkpoint is saved automatically based on the highest validation accuracy.
 
--Loss: CrossEntropyLoss(label_smoothing=0.1)
--Optimizer: AdamW(lr=1e-4, weight_decay=0.01)
--Scheduler: CosineAnnealingLR(T_max=num_epochs, eta_min=1e-6)
--Best model saved by: Validation Accuracy
+- **Loss:** CrossEntropyLoss(label_smoothing=0.1)
+- **Optimizer:** AdamW(lr=1e-4, weight_decay=0.01)
+- **Scheduler:** CosineAnnealingLR(T_max=num_epochs, eta_min=1e-6)
+- **Best model saved by:** Validation Accuracy
 
 ---
 
