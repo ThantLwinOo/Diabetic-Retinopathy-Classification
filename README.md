@@ -61,6 +61,22 @@ All models were trained using a custom PyTorch training loop with validation aft
 
 ---
 
+### Training and Validation Loss of **ResNet + ECA**
+<img width="691" height="547" alt="loss" src="https://github.com/user-attachments/assets/b9a864e4-e32b-41c3-9a8a-3bc336a21b3b" />
+
+
+---
+
+### Training and Validation Accuracy of **ResNet + ECA**
+
+<img width="700" height="547" alt="acc" src="https://github.com/user-attachments/assets/13572581-e5af-4948-856c-c8713b920198" />
+
+---
+
+### Confusion Matrix of **ResNet + ECA**
+
+<img width="699" height="590" alt="com" src="https://github.com/user-attachments/assets/d0cf80ba-fc03-4704-bb58-3522fa44f43c" />
+
 ### Discussion
 
 - The **baseline ResNet-18** already achieved strong performance (**96.54% accuracy**, **AUC = 0.99**), indicating the model learns discriminative DR features effectively.
